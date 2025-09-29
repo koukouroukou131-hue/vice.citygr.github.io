@@ -1,87 +1,112 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #e6eef6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.container {
-    text-align: center;
-    max-width: 800px;
-    width: 100%;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.8);
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-header p {
-    font-size: 1.2rem;
-    color: #9aa4b2;
-    margin-bottom: 30px;
-}
-
-.options {
-    display: flex;
-    justify-content: space-around;
-    gap: 20px;
-}
-
-.option {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    border-radius: 8px;
-    width: 40%;
-}
-
-.option h2 {
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #56b3ff;
-}
-
-.links-list {
-    list-style: none;
-    padding: 0;
-}
-
-.links-list li {
-    margin-bottom: 10px;
-}
-
-.links-list a {
-    text-decoration: none;
-    color: #56b3ff;
-    font-size: 1.2rem;
-    transition: color 0.3s;
-}
-
-.links-list a:hover {
-    color: #fff;
-}
-
-@media (max-width: 768px) {
-    .options {
-        flex-direction: column;
-        gap: 20px;
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Τα Links μου</title>
+  <style>
+    /* Στυλ για το video background */
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: fill; /* ή cover για καλύτερες αναλογίες */
+      z-index: -1; /* ώστε το video να είναι πίσω από το περιεχόμενο */
+      background-color: #000; /* fallback */
     }
 
-    .option {
-        width: 80%;
+    /* Στυλ για το body (μπορεί να μείνει απλό) */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
     }
+
+    /* Περιεχόμενο πάνω από το βίντεο */
+    .content {
+      position: relative;
+      z-index: 1;
+      color: #fff; /* ή όποιο χρώμα θέλεις στα γράμματα */
+      text-align: center;
+    }
+
+    .container {
+      background: rgba(0,0,0,0.5); /* για να φαίνεται το κείμενο πάνω από το video */
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 50px;
+    }
+    .links {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: #ff0099;
+  border: 2px solid #ff0099;
+  padding: 6px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin: 10px 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: all 0.2s ease-in-out;
+}
+
+.link:hover {
+  background: rgba(0,0,0,0.1);
+  transform: scale(1.03);
+}
+
+.icon {
+  height: 1em;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+</style>
+
+
+    a {
+      display: block;
+      color: #fff;
+      background: rgba(255,255,255,0.2);
+      text-decoration: none;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 10px;
+      transition: background 0.3s;
+    }
+
+    a:hover {
+      background: rgba(255,255,255,0.4);
+    }
+  </style>
+</head>
+<body>
+  <!-- Βίντεο background -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="giphy.mp4" type="video/mp4">
+  </video>
+
+  <!-- Περιεχόμενο πάνω από το βίντεο -->
+  <div class="content">
+    <div class="container">
+      <h1>Τα Links μου</h1>
+      <a href="https://instagram.com/username" target="_blank">Instagram</a>
+      <a href="https://twitter.com/username" target="_blank">Twitter</a>
+      <a href="mailto:to-email-sou">Email</a>
+    </div>
+  </div>
+</body>
+</html>
 
