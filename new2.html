@@ -1,36 +1,125 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Επιλογές Links</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Τα Links μου</title>
+  <style>
+    /* 🔹 Βίντεο background */
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: fill; /* γεμίζει όλη την οθόνη */
+      z-index: -1;
+    }
+
+    /* 🔹 Container για όλα */
+    .content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: #000; /* μαύρα γράμματα */
+      padding-top: 50px;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+    }
+
+    header p {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #000;
+      margin-top: 20px;
+    }
+
+    /* 🔹 Container για τα κουμπιά */
+    .links {
+      display: flex;
+      flex-direction: column; /* κουμπιά κάθετα */
+      align-items: stretch;   /* ίδιο πλάτος όλα */
+      width: 300px;           /* πλάτος κουμπιών */
+      margin: 40px auto;      /* κεντράρισμα */
+    }
+
+    /* 🔹 Τα κουμπιά */
+    .link {
+  display: block;
+  padding: 8px 12px;
+  margin: 10px 0;
+  background: transparent; 
+  color: #000000;           /* 🔹 ροζ γράμματα */
+  border: 2px solid #000000;/* 🔹 ροζ περίγραμμα */
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.link:hover {
+  background: rgba(0,0,0,0.2); /* 🔹 Ελαφρύ μαύρο background */
+  transform: scale(1.03);
+}
+
+
+
+    footer {
+      margin-top: 40px;
+      padding: 20px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Καλώς ήρθατε!</h1>
-            <p>Επιλέξτε μια από τις παρακάτω επιλογές για να δείτε τα αντίστοιχα links:</p>
-        </header>
 
-        <div class="options">
-            <div class="option" id="option1">
-                <h2>Επιλογή 1</h2>
-                <ul class="links-list">
-                    <li><a href="https://github.com" target="_blank">GitHub</a></li>
-                    <li><a href="https://stackoverflow.com" target="_blank">Stack Overflow</a></li>
-                </ul>
-            </div>
+  <!-- 🔹 Βίντεο στο background -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="giphy.mp4" type="video/mp4">
+  </video>
 
-            <div class="option" id="option2">
-                <h2>Επιλογή 2</h2>
-                <ul class="links-list">
-                    <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
-                    <li><a href="https://example.com" target="_blank">Παράδειγμα</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+  <!-- 🔹 Όλο το περιεχόμενο πάνω από το βίντεο -->
+  <div class="content">
+    <header>
+      <img src="GTA_Vice_City,_αφίσα.jpg" alt="Προφίλ">
+      <p>Vice City Team will not text u first – be careful of other scammers</p>
+    </header>
+
+    <!-- Κουμπιά -->
+<div class="links">
+  <a class="link" href="https://t.me/+yrf-mGsC4hQzZtu0" target="_blank">
+    <img src="telegram.png" alt="Telegram" class="icon">
+    Join Telegram Group
+  </a>
+  
+    <a class="link" href="https://signal.me/#eu/Lb3mQfuXKRe5joeB8JAmmokegeKeJTuGKEtNEv8ci-ZB5ONyx6dFPYZp2oeH8xTk" target="_blank">
+    <img src="signal.png" alt="Signal" class="icon">
+    Text us in Signal
+  </a>
+
+  <a class="link" href="https://twitter.com/το-username-σου" target="_blank">
+    <img src="viber.png" alt="Viber" class="icon">
+    Join group in Viber
+  </a>
+
+</div>
+
+
+    <footer>
+      <!-- Προαιρετικό footer -->#Vice#City#
+    </footer>
+  </div>
 </body>
 </html>
 
+</html>
